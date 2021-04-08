@@ -807,7 +807,7 @@ int misc_init_r(void)
 		parse_spl_header(SPL_ADDR);
 	}
 
-	setup_environment(gd->fdt_blob);
+	// setup_environment(gd->fdt_blob);
 
 #ifndef CONFIG_MACH_SUN9I
 	ret = sunxi_usb_phy_probe();
@@ -827,7 +827,7 @@ int ft_board_setup(void *blob, bd_t *bd)
 	 * Call setup_environment again in case the boot fdt has
 	 * ethernet aliases the u-boot copy does not have.
 	 */
-	setup_environment(blob);
+	//setup_environment(blob);
 
 #ifdef CONFIG_VIDEO_DT_SIMPLEFB
 	r = sunxi_simplefb_setup(blob);
