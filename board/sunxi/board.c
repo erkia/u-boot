@@ -550,7 +550,11 @@ int mmc_get_env_dev(void)
 	case BOOT_DEVICE_MMC2:
 		return 1;
 	default:
+#ifdef CONFIG_SYS_MMC_ENV_DEV
 		return CONFIG_SYS_MMC_ENV_DEV;
+#else
+		return -1;
+#endif
 	}
 }
 #endif
